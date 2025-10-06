@@ -1,3 +1,10 @@
+تمام، ده كود الـHTML كامل بعد التصحيح بحيث:
+
+* كلمة **"المنتجات" في النص**.
+* قسم **"أرقامنا" تحت المنتجات** بشكل مرتب.
+* شيلت أي `<aside>` أو أغلاط في الإغلاق.
+
+```html
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
@@ -12,7 +19,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
-        <h1>"مياة "ريق/h1>
+        <h1>مياة ريق</h1>
         <p class="tagline">مياه نقية — توصيل سريع</p>
       </div>
 
@@ -43,19 +50,20 @@
 
     <!-- Products list -->
     <section id="productsSection" class="products-area">
-      <h2>المنتجات</h2>
+      <h2 style="text-align:center;">المنتجات</h2>
       <div id="productsGrid" class="products-grid"></div>
     </section>
 
-      <div class="card stats">
-        <h3>أرقامنا</h3>
-        <div class="stat-grid">
-          <div><strong id="statCustomers">0</strong><span>عملاء</span></div>
-          <div><strong id="statOrders">0</strong><span>طلبات</span></div>
-          <div><strong id="statYears">5+</strong><span>سنوات خبرة</span></div>
-        </div>
+    <!-- Stats section -->
+    <div class="card stats">
+      <h3>أرقامنا</h3>
+      <div class="stat-grid">
+        <div><strong id="statCustomers">0</strong><span>عملاء</span></div>
+        <div><strong id="statOrders">0</strong><span>طلبات</span></div>
+        <div><strong id="statYears">5+</strong><span>سنوات خبرة</span></div>
       </div>
-    </aside>
+    </div>
+
   </main>
 
   <!-- Footer -->
@@ -127,3 +135,6 @@
   <script src="script.js"></script>
 </body>
 </html>
+```
+
+لو تحب، أقدر أعمللك بعد كده **كود CSS جاهز** يخلي "أرقامنا" تظهر بشكل جميل ومرتبة على أي شاشة، حتى على الموبايل. تحب أعمله؟
