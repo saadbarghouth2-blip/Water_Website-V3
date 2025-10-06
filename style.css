@@ -87,63 +87,134 @@ body{
 .footer-grid{display:flex;gap:20px;flex-wrap:wrap}
 .footer-grid a{color:#cfefff;text-decoration:none}
 
-/* responsive */
-@media (max-width:1000px){
-  .main-grid{grid-template-columns:1fr 300px}
-}
-@media (max-width:880px){
-  .main-grid{grid-template-columns:1fr}
-  .side-panel{order:2}
-  .products-area{order:1}
-  .controls input[type="search"]{width:120px}
-}
-@media (max-width:520px){
-  .controls input[type="search"]{display:none}
-  .controls select{display:none}
-  .controls button{padding:6px 8px}
-  .product img{height:120px}
-  .cart-sidebar{width:100%;right:-100%}
-  .cart-sidebar.open{right:0}
-}
-/* ====== العرض على التابلت ====== */
+/* ====== الموبايل (حتى 600px) ====== */
 @media (max-width: 600px) {
+  /* شبكة المنتجات */
   .products {
-    grid-template-columns: 1fr;
-    gap: 15px;
+    grid-template-columns: 1fr; /* عمود واحد */
+    gap: 12px;
     padding: 10px;
   }
 
+  /* كارت المنتج */
   .product {
     padding: 10px;
     text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
+  .product:hover {
+    transform: none; /* إزالة التأثير على الموبايل */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  /* صور المنتجات */
   .product img {
     width: 100%;
-    max-height: 220px;
+    max-height: 200px; /* ارتفاع مرن */
     height: auto;
     object-fit: contain;
+    padding: 8px;
+    background: #fafafa;
+    border-bottom: 1px solid #eee;
     margin: 0 auto;
   }
 
+  /* عنوان ووصف المنتج */
   .prod-head, .prod-bottom {
     flex-direction: column;
     align-items: flex-start;
     gap: 6px;
   }
 
-  .btn {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
+  .prod-title {
+    font-size: 16px;
+    font-weight: 700;
   }
 
   .prod-desc {
-    font-size: 14px;
+    font-size: 13px;
+    color: #666;
+    min-height: auto;
     line-height: 1.4;
+    padding: 4px 0;
   }
 
   .price {
     font-size: 16px;
+    font-weight: bold;
+    color: #2196f3;
+  }
+
+  /* الأزرار */
+  .btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
+  .btn.alt {
+    font-size: 13px;
+    padding: 8px 0;
+  }
+
+  /* sidebar الكارت */
+  .cart-sidebar {
+    width: 100%;
+    right: -100%;
+  }
+  .cart-sidebar.open {
+    right: 0;
+  }
+
+  /* مودال */
+  .modal-content {
+    width: 90%;
+    margin: 10% auto;
+    padding: 15px;
+  }
+
+  /* الهيدر */
+  .site-header .header-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+
+  .controls input[type="search"],
+  .controls select {
+    width: 100%;
+    margin: 4px 0;
+  }
+
+  .controls button {
+    width: 100%;
+    padding: 8px 0;
+  }
+}
+
+/* ===== الموبايل الصغير جدًا (حتى 400px) ===== */
+@media (max-width: 400px) {
+  .product img {
+    max-height: 160px;
+  }
+
+  .prod-title {
+    font-size: 15px;
+  }
+
+  .prod-desc {
+    font-size: 12px;
+  }
+
+  .btn {
+    font-size: 13px;
+    padding: 8px 0;
+  }
+
+  .price {
+    font-size: 15px;
   }
 }
