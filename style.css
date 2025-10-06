@@ -359,15 +359,16 @@ html, body {
   text-decoration: none;
 }
 
-/* ===================== MOBILE FULL OPTIMIZED ===================== */
+/* ===================== MOBILE ONLY (up to 600px) ===================== */
 @media (max-width: 600px) {
   /* Body */
   body {
+    font-family: 'Cairo', sans-serif;
+    background: #f4f6f9;
+    color: #333;
     font-size: 15px;
     line-height: 1.5;
     margin: 0;
-    background: var(--bg);
-    color: #333;
   }
 
   /* Header */
@@ -389,6 +390,7 @@ html, body {
   .brand h1 {
     font-size: 22px;
     text-align: center;
+    font-weight: 700;
   }
 
   .brand .tagline {
@@ -409,6 +411,7 @@ html, body {
     padding: 10px;
     font-size: 15px;
     border-radius: 10px;
+    border: none;
   }
 
   .controls button {
@@ -467,7 +470,7 @@ html, body {
   .price {
     font-size: 17px;
     font-weight: 800;
-    color: var(--accent);
+    color: #2196f3;
   }
 
   /* Buttons */
@@ -477,6 +480,19 @@ html, body {
     font-size: 16px;
     border-radius: 12px;
     margin-top: 10px;
+    background: #2196f3;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+  }
+
+  .btn:hover {
+    background: #0b79d0;
+  }
+
+  .btn:active {
+    transform: scale(0.98);
   }
 
   .btn.alt {
@@ -484,6 +500,9 @@ html, body {
     padding: 12px 0;
     font-size: 15px;
     margin-top: 8px;
+    background: #eee;
+    color: #2196f3;
+    border: 1px solid #ddd;
   }
 
   /* Offer banner */
@@ -494,6 +513,7 @@ html, body {
     padding: 12px;
     border-radius: 12px;
     box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    background: #fff;
   }
 
   /* Side Panel */
