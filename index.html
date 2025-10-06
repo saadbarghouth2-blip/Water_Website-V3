@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>متجر المياه — العرض الكامل</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1>متجر المياه</h1>
+        <p class="tagline">مياه نقية — توصيل سريع</p>
+      </div>
+
+      <div class="controls">
+        <input id="searchInput" type="search" placeholder="ابحث عن منتج..." />
+        <select id="filterSelect">
+          <option value="all">كل التصنيفات</option>
+          <option value="bottle">زجاجات</option>
+          <option value="gallon">جالونات</option>
+          <option value="sparkling">فوارة</option>
+          <option value="pack">عروض / كراتين</option>
+        </select>
+        <button id="cartBtn" title="عرض السلة">السلة (<span id="cartCount">0</span>)</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Offer banner -->
+  <section class="offer-banner container">
+    <div>
+      <strong>عرض اليوم:</strong> خصم 20% على كرتونة 12 × 1.5 لتر — العرض ساري اليوم فقط.
+    </div>
+    <div id="dealTimer" class="deal-timer">بانتظار العد</div>
+  </section>
+
+  <!-- Main -->
+  <main class="container main-grid">
+
+    <!-- Products list -->
+    <section id="productsSection" class="products-area">
+      <h2>المنتجات</h2>
+      <div id="productsGrid" class="products-grid"></div>
+    </section>
+
+    <!-- Right column: filters / stats / testimonials -->
+    <aside class="side-panel">
+      <div class="card">
+        <h3>التصنيفات</h3>
+        <ul class="cats">
+          <li><button data-cat="all">الكل</button></li>
+          <li><button data-cat="bottle">زجاجات</button></li>
+          <li><button data-cat="gallon">جالونات</button></li>
+          <li><button data-cat="sparkling">فوارة</button></li>
+          <li><button data-cat="pack">عروض</button></li>
+        </ul>
+      </div>
+
+      <div class="card stats">
+        <h3>أرقامنا</h3>
+        <div class="stat-grid">
+          <div><strong id="statCustomers">0</strong><span>عملاء</span></div>
+          <div><strong id="statOrders">0</strong><span>طلبات</span></div>
+          <div><strong id="statYears">5+</strong><span>سنوات خبرة</span></div>
+        </div>
+      </div>
+
+      <div class="card testimonials">
+        <h3>آراء العملاء</h3>
+        <div class="test">
+          <p>"جودة ممتازة والتوصيل فائق السرعة"</p>
+          <small>- محمد</small>
+        </div>
+        <div class="test">
+          <p>"أسعار مناسبة وخدمة عملاء محترفة"</p>
+          <small>- نورة</small>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>عن المتجر</h4>
+          <p>نقدّم المياه المعبأة بأعلى معايير الجودة مع شبكة توزيع سريعة تغطي المدن الرئيسية.</p>
+        </div>
+        <div>
+          <h4>تواصل معنا</h4>
+          <p>واتساب: 05XXXXXXXX</p>
+          <p>الإيميل: info@waterstore.com</p>
+        </div>
+        <div>
+          <h4>روابط سريعة</h4>
+          <a href="#products">المنتجات</a><br>
+          <a href="#contact">اتصل بنا</a>
+        </div>
+      </div>
+      <div class="copyright">© 2025 متجر المياه</div>
+    </div>
+  </footer>
+
+  <!-- Cart sidebar -->
+  <div id="cartSidebar" class="cart-sidebar">
+    <div class="cart-header">
+      <h3>سلة التسوق</h3>
+      <button id="closeCart">إغلاق</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">الإجمالي: <strong id="cartTotal">0</strong> ج.م</div>
+      <div class="cart-actions">
+        <button id="checkoutBtn">إتمام الطلب</button>
+        <button id="clearCartBtn" class="muted">تفريغ السلة</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout modal -->
+  <div id="checkoutModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" id="closeCheckout">×</button>
+      <h3>نموذج إتمام الطلب</h3>
+      <form id="checkoutForm">
+        <label>الاسم الكامل<input name="name" required /></label>
+        <label>رقم الجوال<input name="phone" required /></label>
+        <label>العنوان<textarea name="address" required></textarea></label>
+        <label>ملاحظات (اختياري)<textarea name="notes"></textarea></label>
+        <label>طريقة الدفع
+          <select name="payment">
+            <option value="cod">الدفع عند الاستلام</option>
+            <option value="bank">تحويل بنكي</option>
+          </select>
+        </label>
+        <div class="form-actions">
+          <button type="submit" class="primary">أرسل الطلب</button>
+          <button type="button" id="downloadJson" class="secondary">تحميل JSON</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Optional contact anchor for footer -->
+  <div id="contact" style="display:none"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
