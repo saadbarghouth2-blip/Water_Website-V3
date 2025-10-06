@@ -1,11 +1,11 @@
 :root {
-  --accent: #0a74c2;
+  --accent: #2196f3;
+  --accent-hover: #0b79d0;
   --muted: #6b7280;
-  --bg: #f4f6f8;
+  --bg: #f4f6f9;
   --card: #ffffff;
-  --danger: #e53e3e;
-  --success: #22c55e;
-  --radius: 12px;
+  --radius: 14px;
+  --shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
 * {
@@ -19,7 +19,6 @@ html, body {
   background: var(--bg);
   color: #333;
   line-height: 1.45;
-  -webkit-font-smoothing: antialiased;
 }
 
 /* Container */
@@ -41,11 +40,12 @@ html, body {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  flex-wrap: wrap;
 }
 
 .brand h1 {
   margin: 0;
-  font-size: 1.15rem;
+  font-size: 1.25rem;
 }
 
 .brand .tagline {
@@ -58,6 +58,7 @@ html, body {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-wrap: wrap;
 }
 
 .controls input[type="search"],
@@ -84,14 +85,14 @@ html, body {
 /* Offer banner */
 .offer-banner {
   background: #fff;
-  border-radius: 10px;
+  border-radius: var(--radius);
   margin: 16px auto;
   padding: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 12px;
-  box-shadow: 0 6px 18px rgba(12, 30, 45, 0.06);
+  box-shadow: var(--shadow);
 }
 
 /* Main layout */
@@ -106,57 +107,57 @@ html, body {
   margin-bottom: 12px;
 }
 
-.products-grid {
+.products {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
 }
 
 /* Product card */
 .product {
   background: var(--card);
   border-radius: var(--radius);
-  padding: 12px;
-  box-shadow: 0 6px 20px rgba(12, 30, 45, 0.04);
+  overflow: hidden;
+  box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
-  min-height: 240px;
-  text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
 }
 
 .product img {
   width: 100%;
-  height: 300px;
-  max-height: 300px;
-  object-fit: contain;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
   background: #fafafa;
   padding: 12px;
-  display: block;
-  border-bottom: 1px solid #eee;
-  margin: 0 auto;
+}
+
+.product:hover img {
+  transform: scale(1.05);
 }
 
 .prod-head {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 15px 0;
-  font-weight: bold;
+  padding: 12px 15px 0;
+  font-weight: 700;
   font-size: 16px;
 }
 
 .prod-desc {
-  padding: 5px 15px 10px;
+  padding: 8px 15px;
   font-size: 14px;
-  color: #666;
-  min-height: 40px;
-  line-height: 1.4;
+  color: var(--muted);
+  flex: 1;
+  line-height: 1.5;
 }
 
 .prod-bottom {
@@ -167,35 +168,36 @@ html, body {
 }
 
 .price {
-  color: #2196f3;
-  font-weight: bold;
+  color: var(--accent);
+  font-weight: 800;
   font-size: 16px;
 }
 
 .btn {
-  background: #2196f3;
-  color: white;
+  background: var(--accent);
+  color: #fff;
   border: none;
-  border-radius: 6px;
-  padding: 9px 16px;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-weight: 700;
   cursor: pointer;
-  font-size: 14px;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .btn:hover {
-  background: #0b79d0;
+  background: var(--accent-hover);
+  transform: translateY(-2px);
 }
 
 .btn.alt {
-  background: #eee;
-  color: #333;
-  padding: 5px 10px;
-  font-size: 12px;
+  background: #f3f4f6;
+  color: var(--accent);
+  border: 1px solid #e6eefc;
+  padding: 8px 14px;
 }
 
 .btn.alt:hover {
-  background: #ddd;
+  background: #e0e4e8;
 }
 
 /* side panel */
@@ -208,9 +210,9 @@ html, body {
 .card {
   background: var(--card);
   padding: 12px;
-  border-radius: 12px;
+  border-radius: var(--radius);
   margin-bottom: 12px;
-  box-shadow: 0 6px 18px rgba(12, 30, 45, 0.04);
+  box-shadow: var(--shadow);
 }
 
 .cats button {
@@ -253,7 +255,7 @@ html, body {
   width: 360px;
   height: 100%;
   background: #fff;
-  box-shadow: -8px 0 30px rgba(12, 30, 45, 0.12);
+  box-shadow: -8px 0 30px rgba(12,30,45,0.12);
   transition: right .35s;
   padding: 14px;
   z-index: 9999;
@@ -307,7 +309,7 @@ html, body {
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0,0,0,0.45);
   display: none;
   align-items: center;
   justify-content: center;
@@ -321,10 +323,10 @@ html, body {
 .modal-content {
   background: #fff;
   padding: 18px;
-  border-radius: 12px;
+  border-radius: var(--radius);
   width: 100%;
   max-width: 520px;
-  box-shadow: 0 12px 40px rgba(12, 30, 45, 0.16);
+  box-shadow: 0 12px 40px rgba(12,30,45,0.16);
 }
 
 .modal-close {
@@ -403,23 +405,12 @@ html, body {
 
   .products {
     grid-template-columns: 1fr;
-    gap: 12px;
-    padding: 10px;
-  }
-
-  .product {
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
+    gap: 15px;
+    padding: 15px;
   }
 
   .product img {
-    width: 100%;
-    max-height: 220px;
-    height: auto;
-    object-fit: contain;
-    padding: 8px;
-    background: #fafafa;
+    height: 200px;
   }
 
   .prod-head, .prod-bottom {
@@ -437,13 +428,13 @@ html, body {
   }
 
   .price {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .btn {
     width: 100%;
-    font-size: 14px;
-    padding: 10px 0;
+    padding: 12px 0;
+    font-size: 15px;
   }
 
   .btn.alt {
@@ -497,6 +488,6 @@ html, body {
   }
 
   .price {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
