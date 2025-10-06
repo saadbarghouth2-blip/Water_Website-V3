@@ -359,13 +359,11 @@ html, body {
   text-decoration: none;
 }
 
-/* ===================== MOBILE ONLY (up to 600px) ===================== */
+/* ================= MOBILE FULL OPTIMIZED ================= */
 @media (max-width: 600px) {
+
   /* Body */
   body {
-    font-family: 'Cairo', sans-serif;
-    background: #f4f6f9;
-    color: #333;
     font-size: 15px;
     line-height: 1.5;
     margin: 0;
@@ -398,6 +396,7 @@ html, body {
     text-align: center;
   }
 
+  /* Controls */
   .controls {
     flex-direction: column;
     width: 100%;
@@ -408,35 +407,41 @@ html, body {
   .controls select,
   .controls button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     font-size: 15px;
     border-radius: 10px;
-    border: none;
   }
 
   .controls button {
     font-weight: 700;
+    background: #fff;
+    color: #2196f3;
+  }
+
+  /* Offer banner */
+  .offer-banner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
   }
 
   /* Products grid */
   .products {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 10px 12px;
+    gap: 18px;
+    padding: 12px;
   }
 
-  /* Product Card */
+  /* Product card */
   .product {
     flex-direction: column;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    transition: transform 0.2s ease;
-  }
-
-  .product:active {
-    transform: scale(0.98);
   }
 
   .product img {
@@ -445,7 +450,6 @@ html, body {
     aspect-ratio: 4/3;
     object-fit: cover;
     border-bottom: 1px solid #eee;
-    display: block;
   }
 
   .prod-head,
@@ -474,46 +478,11 @@ html, body {
   }
 
   /* Buttons */
-  .btn {
+  .btn, .btn.alt {
     width: 100%;
     padding: 14px 0;
     font-size: 16px;
     border-radius: 12px;
-    margin-top: 10px;
-    background: #2196f3;
-    color: #fff;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 0.2s ease, transform 0.1s ease;
-  }
-
-  .btn:hover {
-    background: #0b79d0;
-  }
-
-  .btn:active {
-    transform: scale(0.98);
-  }
-
-  .btn.alt {
-    width: 100%;
-    padding: 12px 0;
-    font-size: 15px;
-    margin-top: 8px;
-    background: #eee;
-    color: #2196f3;
-    border: 1px solid #ddd;
-  }
-
-  /* Offer banner */
-  .offer-banner {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-    padding: 12px;
-    border-radius: 12px;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
-    background: #fff;
   }
 
   /* Side Panel */
@@ -527,11 +496,12 @@ html, body {
   .cart-sidebar {
     width: 100%;
     right: -100%;
-    height: 100%;
   }
+
   .cart-sidebar.open {
     right: 0;
   }
+
   .cart-item img {
     width: 60px;
     height: 60px;
@@ -544,15 +514,15 @@ html, body {
     margin: 10% auto;
     padding: 18px;
     border-radius: 14px;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
   }
 }
 
-/* Extra small screens (up to 400px) */
+/* Extra small screens (<400px) */
 @media (max-width: 400px) {
   .product img {
     aspect-ratio: 1.5/1;
   }
+
   .prod-title { font-size: 16px; }
   .prod-desc { font-size: 13px; }
   .price { font-size: 16px; }
