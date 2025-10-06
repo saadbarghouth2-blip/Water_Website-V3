@@ -364,9 +364,12 @@ html, body {
 
   /* Body */
   body {
+    font-family: 'Cairo', sans-serif;
     font-size: 15px;
     line-height: 1.5;
     margin: 0;
+    background: #f4f6f9;
+    color: #333;
   }
 
   /* Header */
@@ -387,17 +390,19 @@ html, body {
 
   .brand h1 {
     font-size: 22px;
-    text-align: center;
     font-weight: 700;
+    text-align: center;
   }
 
   .brand .tagline {
     font-size: 14px;
     text-align: center;
+    color: rgba(255,255,255,0.9);
   }
 
   /* Controls */
   .controls {
+    display: flex;
     flex-direction: column;
     width: 100%;
     gap: 10px;
@@ -410,12 +415,14 @@ html, body {
     padding: 12px;
     font-size: 15px;
     border-radius: 10px;
+    border: none;
   }
 
   .controls button {
     font-weight: 700;
     background: #fff;
     color: #2196f3;
+    cursor: pointer;
   }
 
   /* Offer banner */
@@ -426,6 +433,7 @@ html, body {
     padding: 12px;
     border-radius: 12px;
     box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    background: #fff;
   }
 
   /* Products grid */
@@ -442,6 +450,11 @@ html, body {
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+  }
+
+  .product:active {
+    transform: scale(0.98);
   }
 
   .product img {
@@ -450,6 +463,7 @@ html, body {
     aspect-ratio: 4/3;
     object-fit: cover;
     border-bottom: 1px solid #eee;
+    display: block;
   }
 
   .prod-head,
@@ -467,8 +481,8 @@ html, body {
 
   .prod-desc {
     font-size: 14px;
-    line-height: 1.4;
     color: #555;
+    line-height: 1.4;
   }
 
   .price {
@@ -478,11 +492,29 @@ html, body {
   }
 
   /* Buttons */
-  .btn, .btn.alt {
+  .btn {
     width: 100%;
     padding: 14px 0;
     font-size: 16px;
     border-radius: 12px;
+    background: #2196f3;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+  }
+
+  .btn:hover { background: #0b79d0; }
+  .btn:active { transform: scale(0.98); }
+
+  .btn.alt {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 15px;
+    margin-top: 8px;
+    background: #eee;
+    color: #2196f3;
+    border: 1px solid #ddd;
   }
 
   /* Side Panel */
@@ -496,11 +528,10 @@ html, body {
   .cart-sidebar {
     width: 100%;
     right: -100%;
+    height: 100%;
   }
 
-  .cart-sidebar.open {
-    right: 0;
-  }
+  .cart-sidebar.open { right: 0; }
 
   .cart-item img {
     width: 60px;
@@ -519,10 +550,7 @@ html, body {
 
 /* Extra small screens (<400px) */
 @media (max-width: 400px) {
-  .product img {
-    aspect-ratio: 1.5/1;
-  }
-
+  .product img { aspect-ratio: 1.5/1; }
   .prod-title { font-size: 16px; }
   .prod-desc { font-size: 13px; }
   .price { font-size: 16px; }
