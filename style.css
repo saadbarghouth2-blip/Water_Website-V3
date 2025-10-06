@@ -359,75 +359,90 @@ html, body {
   text-decoration: none;
 }
 
-/* ===== الموبايل (حتى 600px) ===== */
+/* ===== Mobile Styles (up to 600px) ===== */
 @media (max-width: 600px) {
   body {
     font-size: 14px;
   }
 
-  /* شبكة المنتجات */
+  /* Header */
+  .site-header {
+    padding: 12px 16px;
+  }
+  .header-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+  .controls input,
+  .controls select,
+  .controls button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  /* Products grid */
   .products {
-    grid-template-columns: 1fr; /* عمود واحد */
-    gap: 15px;
+    display: grid;
+    grid-template-columns: 1fr; /* single column */
+    gap: 20px;
     padding: 15px;
   }
 
-  /* كارت المنتج */
+  /* Product card */
   .product {
     padding: 12px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     text-align: center;
-    transition: none; /* إزالة Hover الثقيل على اللمس */
+    transition: none; /* no heavy hover effects on touch */
   }
-
   .product img {
     width: 100%;
-    height: 200px; /* ارتفاع مناسب للموبايل */
+    height: 200px;
     object-fit: cover;
     padding: 8px;
     background: #fafafa;
     border-radius: 8px;
   }
 
-  /* عنوان ووصف المنتج */
-  .prod-head, .prod-bottom {
+  .prod-head,
+  .prod-bottom {
     flex-direction: column;
     align-items: flex-start;
-    gap: 5px;
+    gap: 6px;
   }
 
   .prod-title {
     font-size: 16px;
     font-weight: 700;
   }
-
   .prod-desc {
-    font-size: 13px;
+    font-size: 14px;
     color: #666;
     line-height: 1.4;
   }
-
   .price {
     font-size: 16px;
     font-weight: 800;
+    color: #2196f3;
   }
 
-  /* الأزرار */
+  /* Buttons */
   .btn {
     width: 100%;
     padding: 12px 0;
     font-size: 15px;
     border-radius: 10px;
+    margin-left: 0;
   }
-
   .btn.alt {
     width: 100%;
     padding: 10px 0;
     font-size: 14px;
   }
 
-  /* sidebar الكارت */
+  /* Cart sidebar */
   .cart-sidebar {
     width: 100%;
     right: -100%;
@@ -436,48 +451,30 @@ html, body {
     right: 0;
   }
 
-  /* المودال */
+  /* Modal */
   .modal-content {
     width: 90%;
     margin: 10% auto;
     padding: 15px;
   }
-
-  /* الهيدر */
-  .site-header .header-inner {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 6px;
-  }
-
-  .controls input[type="search"],
-  .controls select,
-  .controls button {
-    width: 100%;
-    margin: 4px 0;
-  }
 }
 
-/* الموبايل الصغير جدًا (حتى 400px) */
+/* Extra small screens (up to 400px) */
 @media (max-width: 400px) {
   .product img {
     height: 160px;
   }
-
   .prod-title {
     font-size: 15px;
   }
-
   .prod-desc {
-    font-size: 12px;
-  }
-
-  .price {
-    font-size: 14px;
-  }
-
-  .btn {
     font-size: 13px;
+  }
+  .price {
+    font-size: 15px;
+  }
+  .btn {
+    font-size: 14px;
     padding: 10px 0;
   }
 }
