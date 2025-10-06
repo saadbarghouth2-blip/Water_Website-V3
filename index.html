@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>متجر المياه — العرض الكامل</title>
+  <title>متجر المياه — الموبايل</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -15,7 +15,6 @@
         <h1>متجر المياه</h1>
         <p class="tagline">مياه نقية — توصيل سريع</p>
       </div>
-
       <div class="controls">
         <input id="searchInput" type="search" placeholder="ابحث عن منتج..." />
         <select id="filterSelect">
@@ -25,7 +24,7 @@
           <option value="sparkling">فوارة</option>
           <option value="pack">عروض / كراتين</option>
         </select>
-        <button id="cartBtn" title="عرض السلة">السلة (<span id="cartCount">0</span>)</button>
+        <button id="cartBtn">السلة (<span id="cartCount">0</span>)</button>
       </div>
     </div>
   </header>
@@ -38,16 +37,38 @@
     <div id="dealTimer" class="deal-timer">بانتظار العد</div>
   </section>
 
-  <!-- Main -->
+  <!-- Products -->
   <main class="container main-grid">
-
-    <!-- Products list -->
     <section id="productsSection" class="products-area">
       <h2>المنتجات</h2>
-      <div id="productsGrid" class="products-grid"></div>
+      <div id="productsGrid" class="products-grid">
+        <!-- منتجات تجريبية -->
+        <div class="product">
+          <img src="https://via.placeholder.com/300x220.png?text=منتج+1" alt="منتج 1">
+          <div class="prod-head">
+            <div class="prod-title">زجاجة مياه 1.5 لتر</div>
+          </div>
+          <div class="prod-desc">مياه نقية طبيعية معبأة.</div>
+          <div class="prod-bottom">
+            <div class="price">10 ج.م</div>
+            <button class="btn">أضف للسلة</button>
+          </div>
+        </div>
+        <div class="product">
+          <img src="https://via.placeholder.com/300x220.png?text=منتج+2" alt="منتج 2">
+          <div class="prod-head">
+            <div class="prod-title">جالون مياه 5 لتر</div>
+          </div>
+          <div class="prod-desc">مياه صحية وعذبة.</div>
+          <div class="prod-bottom">
+            <div class="price">35 ج.م</div>
+            <button class="btn">أضف للسلة</button>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Right column: filters / stats / testimonials -->
+    <!-- Side Panel -->
     <aside class="side-panel">
       <div class="card">
         <h3>التصنيفات</h3>
@@ -59,7 +80,6 @@
           <li><button data-cat="pack">عروض</button></li>
         </ul>
       </div>
-
       <div class="card stats">
         <h3>أرقامنا</h3>
         <div class="stat-grid">
@@ -68,7 +88,6 @@
           <div><strong id="statYears">5+</strong><span>سنوات خبرة</span></div>
         </div>
       </div>
-
       <div class="card testimonials">
         <h3>آراء العملاء</h3>
         <div class="test">
@@ -106,49 +125,5 @@
     </div>
   </footer>
 
-  <!-- Cart sidebar -->
-  <div id="cartSidebar" class="cart-sidebar">
-    <div class="cart-header">
-      <h3>سلة التسوق</h3>
-      <button id="closeCart">إغلاق</button>
-    </div>
-    <div id="cartItems" class="cart-items"></div>
-    <div class="cart-footer">
-      <div class="cart-total">الإجمالي: <strong id="cartTotal">0</strong> ج.م</div>
-      <div class="cart-actions">
-        <button id="checkoutBtn">إتمام الطلب</button>
-        <button id="clearCartBtn" class="muted">تفريغ السلة</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Checkout modal -->
-  <div id="checkoutModal" class="modal" aria-hidden="true">
-    <div class="modal-content">
-      <button class="modal-close" id="closeCheckout">×</button>
-      <h3>نموذج إتمام الطلب</h3>
-      <form id="checkoutForm">
-        <label>الاسم الكامل<input name="name" required /></label>
-        <label>رقم الجوال<input name="phone" required /></label>
-        <label>العنوان<textarea name="address" required></textarea></label>
-        <label>ملاحظات (اختياري)<textarea name="notes"></textarea></label>
-        <label>طريقة الدفع
-          <select name="payment">
-            <option value="cod">الدفع عند الاستلام</option>
-            <option value="bank">تحويل بنكي</option>
-          </select>
-        </label>
-        <div class="form-actions">
-          <button type="submit" class="primary">أرسل الطلب</button>
-          <button type="button" id="downloadJson" class="secondary">تحميل JSON</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- Optional contact anchor for footer -->
-  <div id="contact" style="display:none"></div>
-
-  <script src="script.js"></script>
 </body>
 </html>
